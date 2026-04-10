@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kallu Da Dhaba</title>
+    <style>
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="name">
+                <h1>Kaalu Da Dhaba</h1>
+            </div>
+            <div class="menu">
+                <div class="itemlist"><input type="checkbox" id="pizza" value="150">Pizza - 150/-</div>
+                <div class="itemlist"><input type="checkbox" id="burger" value="65">Burger - 65/-</div>
+                <div class="itemlist"><input type="checkbox" id="idli" value="50">Idli - 50/-</div>
+                <div class="itemlist"><input type="checkbox" id="sambhar" value="35">Sambhar - 35/-</div>
+                <div class="itemlist"><input type="checkbox" id="coldDrink" value="20">Cold Drink - 20/-</div>
+                <div class="itemlist"><input type="checkbox" id="tea" value="7">Tea - 7/-</div>
+            </div>
+            <div id="total"></div>
+        </section>
+    </main>
+    <script>
+        var amt = 0;
+        pizza.onclick = () => {
+            if (pizza.checked == true) {
+                amt.innerHTML = amt += 150;
+                total.innerHTML = "total ammount = " + amt;
+            }
+
+        }
+        burger.onclick = () => {
+            if (burger.checked == true) {
+                amt.innerHTML = amt += 65;
+                total.innerHTML = "total ammount = " + amt;
+            }
+
+
+        }
+        idli.onclick = () => {
+            if (idli.checked == true) {
+                amt.innerHTML = amt += 50;
+                total.innerHTML = "total ammount = " + amt;
+            }
+
+
+        }
+        sambhar.onclick = () => {
+            if (sambhar.checked == true) {
+                amt.innerHTML = amt += 35;
+                total.innerHTML = "total ammount = " + amt;
+            }
+
+
+        }
+        coldDrink.onclick = () => {
+            if (coldDrink.checked == true) {
+                amt.innerHTML = amt += 20;
+                total.innerHTML = "total ammount = " + amt;
+            }
+
+
+        }
+        tea.onclick = () => {
+            if (tea.checked == true) {
+                amt.innerHTML = amt += 7;
+                total.innerHTML = "total ammount = " + amt;
+            }
+            if (tea.unchecked == true) {
+                amt.innerHTML = amt += 7;
+                total.innerHTML = "total ammount = " - amt;
+            }
+            
+
+
+
+        }
+
+    </script>
+</body>
+
+</html>

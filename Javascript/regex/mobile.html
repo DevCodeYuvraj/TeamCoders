@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>mobile</label>
+    <input type="checkbox" name="phoneno" id="xphone">
+    <input type="text" id="phone">
+    <div id="mobilevalidation"></div>
+    <!-- <label>password</label>
+    <input type="checkbox" id="xpass" name="password">
+    <div id="validpassword"></div> -->
+    <script>
+        xphone.onblur = () => {
+            if (xphone.checked == true) {
+                phone.onkeyup = () => {
+                    const regex = /^[0-9]{10}$/;
+                    if (regex.test(phone.value) == false) {
+                        mobilevalidation.innerHTML = "invalid input";
+                    }
+                    else {
+                        mobilevalidation.innerHTML = "";
+                    }
+                }
+            }
+            else if(xphone.checked == false){
+                 phone.onkeyup = () => {
+                    const regex = /^[0-9]{10}$/;
+                    if (regex.test(phone.value) == false) {
+                        mobilevalidation.innerHTML = "";
+                    }
+                }
+                mobilevalidation.innerHTML="";
+            }
+
+
+
+        }
+        // xpass.onkeyup = () => {
+        //     const regexpass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        //     if (regexpass.test(xpass.value) == false) {
+        //         validpassword.innerHTML = "invalid password";
+
+        //     }
+        //     else {
+        //         validpassword.innerHTML = "";
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

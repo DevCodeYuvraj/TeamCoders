@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            margin: auto;
+
+        }
+
+        .slider2 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            margin: auto;
+        }
+
+        .first,
+        h2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .first {
+
+            width: 33%;
+            margin: auto;
+
+            border: solid black 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <button id="remove">-</button>
+        <div class="slider2" id="slider2">
+        </div>
+        <button id="add">+</button>
+    </div>
+
+    <script>
+        var i = -1;
+        // Array of names
+        const names = ["Ram Singh", "Bhagwan", "Chandan", "Deepak", "Lalit", "Pardeep", "Amit"];
+
+        function myElemmentadd() {
+            if(i==6)
+                i=-1;
+            i++;
+            const element = document.createElement("div");
+            element.setAttribute("class", "first"); // Set class for styling
+            // Create a heading element
+            const heading = document.createElement("h1");
+            heading.innerHTML = names[i]; // Set the first name as the heading text
+            // Append the heading to the div
+            element.appendChild(heading);
+            console.log(i);
+            return element;
+
+
+        }
+        function myElemmentremove() {
+             if(i==2 )
+                i=7;
+            i--;
+            const element = document.createElement("div");
+            element.setAttribute("class", "first"); // Set class for styling
+            // Create a heading element
+            const heading = document.createElement("h1");
+            heading.innerHTML = names[i]; // Set the first name as the heading text
+            // Append the heading to the div
+            element.appendChild(heading);
+           
+            console.log(i);
+            return element;
+
+
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            // Create a new div element
+            x = 0;
+            while (x < 3) {
+                element = myElemmentadd();
+                // Get the slider element by ID and append the new div
+                const slider = document.getElementById("slider2");
+                slider.appendChild(element);
+                x++;
+            }
+        });
+
+        add.onclick = () => {
+            element = myElemmentadd();
+            // Get the slider element by ID and append the new div
+            const slider = document.getElementById("slider2");
+            slider.removeChild(slider.firstElementChild);
+            slider.appendChild(element);
+            
+
+        }
+        remove.onclick = () => {
+            
+            const slider = document.getElementById("slider2");
+
+            // Move index backward (circular)
+           // i = (i - 1 + names.length) % names.length;
+
+            // Remove last element
+            slider.removeChild(slider.lastElementChild);
+
+            // Create new element with updated index
+           element=myElemmentremove();
+
+            slider .appendChild(element);
+
+            // Insert at beginning
+            slider.insertBefore(element, slider.firstElementChild);
+        };
+
+    </script>
+
+
+</body>
+
+</html>

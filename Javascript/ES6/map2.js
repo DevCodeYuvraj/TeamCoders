@@ -1,0 +1,10 @@
+data=[
+    {"Name":"Ram","Sale":5600,"city":"Jaipur"},
+    {"Name":"Shyam","Sale":5600,"city":"Jaipur"},
+    {"Name":"Kapil","Sale":5600,"city":"Jaipur"},
+    {"Name":"Pardeep","Sale":5600,"city":"Jaipur"},
+    {"Name":"Jakir","Sale":5600,"city":"Jaipur"},
+];
+data.map((singledata)=>{
+    console.log(singledata.Name);
+    });

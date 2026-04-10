@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width:100%;
+            height: 800px;
+            border: solid black 2px;
+            
+        }
+
+        .previous {
+            width: 70px;
+            height: 50px;
+
+        }
+
+        .next {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="previous">
+            <button type="button" id="previous"> previous</button>
+        </div>
+        <div class="box" id="ximage"></div>
+        <p id="number"></p>
+        <div class="next">
+            <button type="button" id="next">next</button>
+        </div>
+    </section>
+    <script>
+        images=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg"];
+        i=0;
+        ximage.style.background ="url('images/" + images[i] + "')";
+        ximage.style.backgroundSize="100% 100%"
+        next.onclick=()=>{
+            i++;
+            ximage.style.background="url('images/" + images[i] + "')";
+            ximage.style.backgroundSize="100% 100%";
+            
+            if (images[i]==images[6])
+                i=i-7;
+        }
+        previous.onclick=()=>{
+            if(i==0){
+                i=6;
+                ximage.style.background="url('images/" + images[i] + "')";
+                ximage.style.backgroundSize="100% 100%"
+            }
+            else{
+                i--;
+                ximage.style.background="url('images/" + images[i] + "')";
+                ximage.style.backgroundSize="100% 100%"
+            }
+        }
+    </script>
+</body>
+
+</html>

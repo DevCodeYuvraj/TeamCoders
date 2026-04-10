@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<table id="tab" border="1" align="center">
+    <tr>
+        <td>Add Names</td>
+        <td>Add New</td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="text" name="xn" size="20" />
+        </td>
+        <td>
+            <button type="button" onclick="add()"> + </button>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <input type="button" onclick="fun()" value="Get All" />
+        </td>
+    </tr>
+</table>
+
+<p id="xid"></p>
+
+<script>
+let tab = document.getElementById("tab");
+
+function add() {
+    let myrow = tab.insertRow(-1); // always add at end
+    let mycell1 = myrow.insertCell(0);
+    let mycell2 = myrow.insertCell(1);
+
+    let textbox = document.createElement("input");
+    textbox.type = "text";
+    textbox.name = "xn";
+    textbox.size = "20";
+
+    let addition = document.createElement("button");
+    addition.innerHTML = "+";
+    addition.onclick = add;
+
+    mycell1.appendChild(textbox);
+    mycell2.appendChild(addition);
+}
+
+function fun() {
+    let str = "";
+    let mynames = document.getElementsByName("xn");
+
+    for (let i = 0; i < mynames.length; i++) {
+        str += mynames[i].value + " "; // add space
+    }
+
+    document.getElementById("xid").innerHTML = str;
+}
+</script>
+
+</body>
+</html>

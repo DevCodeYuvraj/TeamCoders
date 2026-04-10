@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <script>
+        names=["Yuvraj", "Mayank", "Kaushal", "Pradeep", "Raghveer", "Suryapal", "Raaj"];
+        i=0;
+        xname.innerHTML=names[0];
+        next.onclick=()=>{
+            i++;
+            xname.innerHTML= names[i];
+            if (names[i]==names[6])
+                i=i-7;
+        }
+        previous.onclick=()=>{
+            if(i==0){
+                i=7;  
+            }
+            else{
+                i--;
+                xname.innerHTML=names[i];
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>
