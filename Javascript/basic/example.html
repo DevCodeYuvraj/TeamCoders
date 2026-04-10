@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate GST Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 320px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .item {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .bottom {
+            margin-top: 20px;
+        }
+
+        select,
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 18px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Calculate GST Bill</h2>
+
+        <div class="item">
+            <input type="checkbox" id="pizza" value="150"> Pizza - ₹150
+        </div>
+
+        <div class="item">
+            <input type="checkbox" id="burger" value="65"> Burger - ₹65
+        </div>
+
+        <div class="item">
+            <input type="checkbox" id="idli" value="120"> Idli - ₹120
+        </div>
+
+        <div class="item">
+            <input type="checkbox" id="sabun" value="35"> Sabun - ₹35
+        </div>
+
+        <div class="item">
+            <input type="checkbox" id="coldrink" value="15"> Colddrink - ₹15
+        </div>
+
+        <div class="item">
+            <input type="checkbox" id="tea" value="7"> Tea - ₹7
+        </div>
+
+        <div class="bottom">
+            <label><b>Select GST:</b></label>
+            <select id="gst">
+                <option value="0">Select GST</option>
+                <option value="5">5%</option>
+                <option value="8">8%</option>
+                <option value="12">12%</option>
+            </select>
+
+            <button onclick="calculateBill()">Calculate Total</button>
+
+            <input type="text" id="result" placeholder="Total Amount" readonly>
+        </div>
+    </div>
+
+    <script>
+        function calculateBill() {
+            let total = 0;
+
+            let items = document.querySelectorAll('input[type="checkbox"]');
+
+            items.forEach(item => {
+                if (item.checked) {
+                    total += Number(item.value);
+                }
+            });
+
+            let gst = Number(document.getElementById("gst").value);
+            let gstAmount = (total * gst) / 100;
+            let finalAmount = total + gstAmount;
+
+            document.getElementById("result").value = "₹ " + finalAmount.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>

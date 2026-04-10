@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #uservalidation, #emailvalidation{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <table align="center" border="1">
+        <tr>
+            <td><label> User Name </label></td>
+            <td>
+                <input type="text" name="xname" id="txt" />
+                <div id="uservalidation"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label> Email  </label></td>
+            <td>
+                <input type="email" name="xemail" id="txtemail" />
+                <div id="emailvalidation"></div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td colspan="2">
+                    <button type="button"  id="btn"> Click </button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        txt.onkeyup=()=>{
+            const regex = /^[A-Za-z]+( [A-Za-z]+)*$/;
+            if(regex.test(txt.value)==false){
+                uservalidation.innerHTML="Character is not allow";
+            }
+            else
+            {
+                uservalidation.innerHTML="";
+            }
+        }
+
+        txtemail.onKeyup=()=>{
+            
+            const emailregex= /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            if(emailregex.test(txtemail.value)==false)
+                emailvalidation.innerHTML="Email format is not correct";
+            else
+                emailvalidation.innerHTML="";
+        }
+    </script>
+</body>
+</html> 

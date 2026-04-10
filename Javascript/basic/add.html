@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label> Number 1 </label>
+    <input type="text" id="txt1" />
+    <br />
+    <label> Number 2 </label>
+    <input type="text" id="txt2" />
+    <button id="btn">addition</button>
+    <button id="reset"> Clear All </button>
+    <div id="result"></div>
+    <input type="radio" name="rd1" checked value="1" id="add" >addition
+    <br>
+    <input type="radio" name="rd1" value="2" id="sub">subtraction
+    <br>
+    <input type="radio" name="rd1" value="3" id="multi">multiplication
+    <br>
+    <input type="radio" name="rd1" value="4" id="divide">division
+
+
+    <script>
+        btn.onclick = () => {
+            num1 = parseInt(txt1.value);
+            num2 = parseInt(txt2.value);
+
+            
+            if (add.checked == true)
+                z = num1 + num2;
+            else if (sub.checked == true)
+                z = num1 - num2;
+            else if (multi.checked == true)
+                z = num1 * num2;
+            else if (divide.checked == true)
+                z = num1 / num2;
+
+            // result.innerHTML = "result " + z;
+            result.innerHTML="result" + z;
+        }
+
+
+        
+
+        reset.onclick = () => {
+            txt1.value = "";
+            txt2.value = "";
+            result.innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>

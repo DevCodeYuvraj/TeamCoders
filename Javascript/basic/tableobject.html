@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cell{
+            width: 50px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <label> username</label>
+    <input type="text" name="xname" id="xn">
+    <label> age</label>
+    <input type="text" name="xage" id="xa">
+
+
+
+
+    <table id="tab">
+        
+    </table>
+    <!-- <button id="btn"></button> -->
+    <script>
+        tab = document.getElementById("tab");
+        tab.setAttribute("border", "2%");
+        tab.setAttribute("align", "center");
+        myrow = tab.insertRow(-1);
+        mycell1 = myrow.insertCell(0);
+        mycell2 = myrow.insertCell(1);
+        mycell3 = myrow.insertCell(2);
+        mycell1.innerHTML = xn.value;
+        mycell2.innerHTML = xa.value;
+        mycell3.innerHTML = "<button onclick='add(this)'>+</button>";
+        
+        function add(btn) {
+            myrow = tab.insertRow(-1);
+            mycell1 = myrow.insertCell(0);
+            mycell2 = myrow.insertCell(1);
+            mycell3 = myrow.insertCell(2);
+            mycell1.innerHTML = xn.value;
+            mycell2.innerHTML = xa.value;
+            
+            mycell3.innerHTML = "<button onclick='add(this)'>+</button>";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="username">Username (3-15 chars):</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div id="validusername"></div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div id="validemail"></div>
+        <div>
+            <label for="phone">Phone (Format: 1234567890):</label>
+            <input type="tel" id="phone" name="phone">
+        </div>
+        <div id="validnumber"></div>
+
+        <div>
+            <label for="age">Age (18-60):</label>
+            <input type="number" id="age" name="age">
+        </div>
+        <div id="validage"></div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div id="validpassword"></div>
+        <div>
+            <label for="appointment">Appointment Date:</label>
+            <input type="date" id="appointment" name="appointment">
+        </div>
+        <div id="validdate"></div>
+        <button type="submit" id="submit">Submit Practice Form</button>
+    </form>
+    <script>
+        username.onkeyup = () => {
+            const regex = /^[a-zA-Z0-9_]{3,20}$/;
+            if (regex.test(username.value) == false) {
+                validusername.innerHTML = "Character is not allow";
+            }
+            else {
+                validusername.innerHTML = "";
+            }
+        }
+        email.onkeyup = () => {
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (regex.test(email.value) == false) {
+                validemail.innerHTML = "inavalid email";
+            }
+            else {
+                validemail.innerHTML = "";
+            }
+        }
+        phone.onkeyup = () => {
+            const regex = /^[6-9]\d{9}$/;
+            if (regex.test(phone.value) == false) {
+                validnumber.innerHTML = "inavalid mobile number";
+            }
+            else {
+                validnumber.innerHTML = "";
+            }
+        }
+        age.onkeyup = () => {
+            const regex = /^(1[89]|[2-5][0-9]|60)$/;
+            if (regex.test(age.value) == false) {
+                validage.innerHTML = "inavalid age";
+            }
+            else {
+                validage.innerHTML = "";
+            }
+        }
+        password.onkeyup = () => {
+            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (regex.test(password.value) == false) {
+                validpassword.innerHTML = "invalid password";
+
+            }
+            else {
+                validpassword.innerHTML = "";
+            }
+        }
+        date.onkeyup = () => {
+            const regex = /^\d{2}-\d{2}-\d{4}$/;
+            if (regex.test(date.value) == false) {
+                validdate.innerHTML = "invalid date";
+
+            }
+            else {
+                validdate.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.navbar{
+    margin-top: 5px;
+    width: 87vw;
+    height: 5vh;
+    border: solid black 2px;
+}
+.container{
+    width: 87vw;
+    height: 87vh;
+
+}

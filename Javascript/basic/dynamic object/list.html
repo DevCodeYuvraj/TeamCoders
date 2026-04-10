@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="input">
+
+        <input type="text" name="xn" id="txt">
+        <button id="btn" onclick="add()"> +</button>
+        <ol id="mylist"></ol>
+
+    </div>
+    <script>
+        function add() {
+            let data = document.getElementById("txt").value;
+            let list = document.getElementById("mylist");
+            let li = document.createElement("li");
+            li.innerText = data;
+            list.appendChild(li);
+            document.getElementById("txt").value = "";
+
+        }
+    </script>
+</body </html>

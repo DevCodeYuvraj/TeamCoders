@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>range</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border: solid black 2px;
+            
+        }
+        #result{
+            border-style: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="range" id="rng" min="0" max="500" value="10">Border radius
+    <input type="text" id="result1">
+    <input type="range" id="rn" min="0" max="100" value="1">Border size
+    <input type="text" id="result2">
+    <br/>
+    <input type="color" name="xcol" id="xcol" value="#0000"/>
+    <input type="text" id="result3">
+    <div class="box" id="box"></div>
+    <script>
+        
+        rng.onmousemove=()=>{
+                box.style.borderRadius=rng.value+"px";
+                result1.value=rng.value;
+            }
+        rn.onmousemove=()=>{
+                box.style.borderWidth=rn.value+"px";
+                result2.value=rn.value;
+        }
+        xcol.onclick=()=>{
+                box.style.backgroundColor =xcol.value;
+                result3.value=xcol.value;
+        }
+       console.log(xcol)
+    </script>
+</body>
+</html>

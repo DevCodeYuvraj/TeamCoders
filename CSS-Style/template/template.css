@@ -1,0 +1,171 @@
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .image1 {
+            display: flex;
+            flex-direction: column-reverse;
+            width: 100%;
+            height: 900px;
+            background-image: url(./images/hamburger.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .navbar,
+        ul,
+        li {
+            list-style: none;
+        }
+
+        header {
+            width: 100%;
+            height: 55px;
+            position: fixed;
+            background-color: white;
+            padding-inline: 20PX;            
+        }
+
+        .heading {
+            float: left;
+            font-size: 15px;
+        }
+
+        .heading h1 {
+            line-height: 40px;
+
+        }
+
+        .navbar {
+            float: right;
+            font-size: 15px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: start;
+        }
+
+        header,
+        a {
+            margin-right: 10px;
+            color: black;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: 5px;
+            line-height: 50px;
+            padding: 10px 10px;
+        }
+
+        
+        main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+            height: 800px;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            width: 80%;
+            height: 700px;
+            
+        }
+        .card-content{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            width: 80%;
+            height: 600px;
+        }
+        .image2{
+            width: 50%;
+            height: 600px;
+            background-image: url(./images/tablesetting2.jpg);
+            background-size: cover;
+        }
+        .image3{
+            width: 50%;
+            height: 600px;
+            background-image: url(./images/tablesetting.jpg);
+            background-size: cover;
+        }
+        .information{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-items: center;
+            align-content: center;
+            width: 48%;
+            height: 580px;
+            padding:1%;
+            text-align: justify;
+        }
+        .main-title{
+            font-size: 40px;
+            font-weight: 100;
+            padding: 10px 20px;
+            letter-spacing: 5px;
+        }
+        .subtitle{
+            font-size: 19px;
+            padding-top: 30px ;
+            padding-inline: 20px;
+            letter-spacing:6px;
+            font-weight: 500;
+            
+        }
+        .caption, h2{
+            width: 340px;
+            height: 50px;
+            color: rgb(80, 80, 80);
+            font-size: 40px;
+            font-weight: 500;
+            padding-bottom: 30px;
+            padding-left: 15px;
+            letter-spacing: 4px;
+            
+        }
+        .description1{
+            margin: 18px;
+            font-size:20px;
+            line-height: 23px;
+            letter-spacing: 0.1px;
+        }
+        .description2{
+            margin: 18px;
+            font-size:20px;
+            color: rgb(143, 143, 143);
+            line-height: 23px;
+            letter-spacing: 0.1px;
+        }
+        .overlap{
+            width: 100%;
+            height: 600px;
+            background-color: rgba(244, 237, 237, 0.262);
+            
+        }
+    
