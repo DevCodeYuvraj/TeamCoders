@@ -6,5 +6,6 @@ data=[
     {"Name":"Jakir","Sale":5600,"city":"Jaipur"},
 ];
 data.map((singledata)=>{
-    console.log(singledata.Name);
+    if(singledata.Name=="Ram")
+        console.log(singledata.Sale);
     });
