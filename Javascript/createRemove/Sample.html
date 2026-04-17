@@ -22,12 +22,16 @@
             align-items: center;
             justify-content: center;
             width: 90%;
+            height: auto;
             margin: auto;
         }
 
         .first,
-        h2 {
+        img {
             display: flex;
+            width: 90%;
+            height: auto;
+            border: solid red 2px;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -47,28 +51,29 @@
 <body>
     <div class="slider">
         <button id="remove">-</button>
-        <div class="slider2" id="slider2">
-        </div>
+        <div class="slider2" id="slider2"></div>
         <button id="add">+</button>
     </div>
 
     <script>
         var i = -1;
         // Array of names
-        const names = ["Ram Singh", "Bhagwan", "Chandan", "Deepak", "Lalit", "Pardeep", "Amit"];
-
+        const names = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg"];
+        slider2.style.background ="url('./assets/images/" + names[i] + "')";
+        slider2.style.backgroundSize="100% 100%"
         function myElemmentadd() {
-            if(i==6)
-                i=-1;
             i++;
             const element = document.createElement("div");
             element.setAttribute("class", "first"); // Set class for styling
             // Create a heading element
-            const heading = document.createElement("h1");
-            heading.innerHTML = names[i]; // Set the first name as the heading text
+            const heading = document.createElement("img");
+            heading.style.background="url('./assets/images/" + names[i] +"')"; // Set the first name as the heading text
+            heading.style.backgroundSize="100% 100%"
             // Append the heading to the div
             element.appendChild(heading);
             console.log(i);
+            if(i==6)
+                i=-1;
             return element;
 
 
@@ -84,7 +89,6 @@
             heading.innerHTML = names[i]; // Set the first name as the heading text
             // Append the heading to the div
             element.appendChild(heading);
-           
             console.log(i);
             return element;
 
